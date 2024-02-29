@@ -5,13 +5,58 @@
   box-sizing: border-box;
 }
 
+/* UTILITY */
+.d-none {
+  display: none;
+}
+
 /* GENERAL */
+#btn-start {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, rgb(197, 150, 30), rgb(245, 217, 57), rgb(197, 150, 30));
+  font-weight: bold;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+#btn-restart {
+  margin-top: 50px;
+  background: linear-gradient(to bottom right, blueviolet, violet, blueviolet);
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#btn-restart.disable {
+  pointer-events: none;
+  background: grey
+}
+
 .main-wrapper {
   height: 100vh;
-  background-color: blueviolet;
+  background-image: url('../img/background.jpg');
+  background-size: cover;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+label {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 10px 50px;
+  background: linear-gradient(to right, transparent, white, transparent);
+}
+
+#difficulty {
+  margin: 30px 0;
+  font-size: 1rem;
+  border-radius: 10px;
+  padding: 3px 5px;
 }
 
 #grid-container {
@@ -19,24 +64,53 @@
   height: 800px;
   display: flex;
   flex-wrap: wrap;
-  background-color: blue;
   box-sizing: content-box;
-  border: 5px outset violet;
+  border: 5px outset brown;
 }
 
 .square {
-  width: 80px;
-  height: 80px;
-  background-color: cornflowerblue;
+  background-color: coral;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 5px outset cornflowerblue;
-  box-shadow: 0 0 2px inset blue;
+  border: 5px outset coral;
+  box-shadow: 0 0 2px inset brown;
   font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .clicked {
   background-color: wheat;
   border: 5px inset wheat;
+}
+
+.easy-grid {
+  width: 700px;
+  height: 700px;
+}
+
+.easy-grid .square {
+  width: calc(100% / 7);
+  height: calc(100% / 7);
+}
+
+.medium-grid {
+  width: 810px;
+  height: 810px;
+}
+
+.medium-grid .square {
+  width: calc(100% / 9);
+  height: calc(100% / 9);
+}
+
+.hard-grid {
+  width: 800px;
+  height: 800px;
+}
+
+.hard-grid .square {
+  width: calc(100% / 10);
+  height: calc(100% / 10);
 }

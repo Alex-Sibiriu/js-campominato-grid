@@ -1,25 +1,55 @@
 const grid = document.getElementById('grid-container');
+const btnStart = document.getElementById('btn-start');
+const btnRestart = document.getElementById('btn-restart');
+const difficulty = document.getElementById('difficulty').value;
 
-for (i = 1; i <= 100; i++) {
-  const square = createSquare(i);
-  grid.append(square);
-}
+btnStart.addEventListener('click', startGame);
+btnRestart.addEventListener('click', startGame);
+
+grid.append(btnStart);
 
 ///////// FUNCTIONS
-function createSquare(index) {
+function startGame() {
+  reset();
+  
+  const difficulty = document.getElementById('difficulty').value;
+  
+  let maxSquares;
+
+  if (difficulty === 'easy-grid') {
+    maxSquares = 49;
+  } else if (difficulty === 'medium-grid') {
+    maxSquares = 81;
+  } else {
+    maxSquares = 100;
+  }
+
+  for (i = 1; i <= maxSquares; i++) {
+    btnStart.classList.add('d-none')
+    const square = createSquare(i);
+    grid.classList.add(difficulty);
+    grid.append(square);
+  }
+
+  btnRestart.classList.remove('disable');
+}
+
+function createSquare(indexN) {
   const cell = document.createElement('div');
   cell.className = 'square';
-
-  cell._cellID = index;
 
   cell.addEventListener('click', function() {
 
     this.classList.toggle('clicked');
 
     this.innerHTML = (this.classList.contains('clicked')) 
-                    ? this.innerHTML = this._cellID 
+                    ? this.innerHTML = indexN
                     : this.innerHTML = '';
   })
 
   return cell;
+}
+
+function reset() {
+  grid.innerHTML = '';
 }
