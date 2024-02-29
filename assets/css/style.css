@@ -69,8 +69,9 @@ label {
 }
 
 #grid-container {
+  position: relative;
   width: 800px;
-  height: 800px;
+  aspect-ratio: 1;
   display: flex;
   flex-wrap: wrap;
   box-sizing: content-box;
@@ -79,10 +80,11 @@ label {
 }
 
 .square {
-  background-color: coral;
+  aspect-ratio: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: coral;
   border: 5px outset coral;
   box-shadow: 0 0 2px inset brown;
   font-weight: bold;
@@ -97,15 +99,38 @@ label {
 
 .easy-grid .square {
   width: calc(100% / 7);
-  height: calc(100% / 7);
 }
 
 .medium-grid .square {
   width: calc(100% / 9);
-  height: calc(100% / 9);
 }
 
 .hard-grid .square {
   width: calc(100% / 10);
-  height: calc(100% / 10);
+}
+
+.game-end {
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-shadow: 2px 5px black,
+              -2px -2px black,
+               2px -2px black,
+              -2px 2px black;     
+}
+
+.game-end.win {
+  background-color: rgba(22, 255, 76, 0.2);
+  color: yellowgreen;
+}
+
+.game-end.lose {
+  color: crimson;
+  background-color: rgba(255, 0, 0, 0.2);
 }
