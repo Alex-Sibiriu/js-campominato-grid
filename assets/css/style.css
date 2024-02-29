@@ -1,0 +1,42 @@
+/* CSS RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* GENERAL */
+.main-wrapper {
+  height: 100vh;
+  background-color: blueviolet;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#grid-container {
+  width: 800px;
+  height: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: blue;
+  box-sizing: content-box;
+  border: 5px outset violet;
+}
+
+.square {
+  width: 80px;
+  height: 80px;
+  background-color: cornflowerblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px outset cornflowerblue;
+  box-shadow: 0 0 2px inset blue;
+  font-weight: bold;
+}
+
+.clicked {
+  background-color: wheat;
+  border: 5px inset wheat;
+}
