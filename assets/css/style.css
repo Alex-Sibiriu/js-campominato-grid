@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 /* UTILITY */
@@ -38,7 +39,8 @@
 
 #btn-restart.disable {
   pointer-events: none;
-  background: grey
+  background: grey;
+  color: rgb(170, 169, 169)
 }
 
 .main-wrapper {
@@ -72,6 +74,7 @@ label {
   display: flex;
   flex-wrap: wrap;
   box-sizing: content-box;
+  background-color: coral;
   border: 5px outset brown;
 }
 
@@ -92,29 +95,14 @@ label {
   border: 5px inset wheat;
 }
 
-.easy-grid {
-  width: 700px;
-  height: 700px;
-}
-
 .easy-grid .square {
   width: calc(100% / 7);
   height: calc(100% / 7);
 }
 
-.medium-grid {
-  width: 810px;
-  height: 810px;
-}
-
 .medium-grid .square {
   width: calc(100% / 9);
   height: calc(100% / 9);
-}
-
-.hard-grid {
-  width: 800px;
-  height: 800px;
 }
 
 .hard-grid .square {
