@@ -27,6 +27,8 @@ function startGame() {
   for (i = 1; i <= maxSquares; i++) {
     btnStart.classList.add('d-none')
     const square = createSquare(i);
+    
+    grid.classList.remove('easy-grid', 'medium-grid', 'hard-grid');
     grid.classList.add(difficulty);
     grid.append(square);
   }

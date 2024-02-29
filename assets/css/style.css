@@ -22,11 +22,18 @@
 
 #btn-restart {
   margin-top: 50px;
-  background: linear-gradient(to bottom right, blueviolet, violet, blueviolet);
+  background: linear-gradient(to bottom right, brown, red, brown);
+  color:  white;
   padding: 10px 20px;
   border-radius: 10px;
   cursor: pointer;
+  font-size: 1.5rem;
   font-weight: bold;
+  transition: all .3s;
+}
+
+#btn-restart:hover {
+  filter: brightness(1.15);
 }
 
 #btn-restart.disable {
