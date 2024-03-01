@@ -97,15 +97,15 @@ label {
   border: 5px inset wheat;
 }
 
-.easy-grid .square {
+.grid49 .square {
   width: calc(100% / 7);
 }
 
-.medium-grid .square {
+.grid81 .square {
   width: calc(100% / 9);
 }
 
-.hard-grid .square {
+.grid100 .square {
   width: calc(100% / 10);
 }
 

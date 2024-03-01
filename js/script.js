@@ -1,6 +1,7 @@
 const grid = document.getElementById('grid-container');
 const btnStart = document.getElementById('btn-start');
 const btnRestart = document.getElementById('btn-restart');
+const difficultyArray = [49, 81, 100];
 let maxSquares;
 
 btnStart.addEventListener('click', startGame);
@@ -18,26 +19,20 @@ function startGame() {
   const difficulty = document.getElementById('difficulty').value;
 
   setMaxSquares(difficulty);
-  createGrid(difficulty);
+  createGrid(maxSquares);
 
   btnStart.classList.add('d-none');
   btnRestart.classList.remove('disable');
 }
 
 // Funzione per impostare il numero di quadrati
-function setMaxSquares(difficulty) {
-  if (difficulty === 'easy-grid') {
-    maxSquares = 49;
-  } else if (difficulty === 'medium-grid') {
-    maxSquares = 81;
-  } else {
-    maxSquares = 100;
-  }
+function setMaxSquares(difficultyValue) {
+  maxSquares = difficultyArray[difficultyValue];
 }
 
 // Funzione per creare la griglia
-function createGrid(difficulty) {
-  grid.className = difficulty;
+function createGrid(maxSquares) {
+  grid.className = 'grid' + maxSquares;
   for (let i = 1; i <= maxSquares; i++) {
     const square = createSquare(i);
     grid.append(square);
